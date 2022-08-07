@@ -1,4 +1,4 @@
-const model = await tf.loadLayersModel("./assets/model/model-1.json");
+const model = await tf.loadLayersModel('./assets/model/model-1.json');
 
 function indexOfMax(arr) {
   if (arr.length === 0) {
@@ -18,12 +18,12 @@ function indexOfMax(arr) {
   return maxIndex;
 }
 
-const LABEL = "ABCDEFGHIKLMNOPQRSTUVWXY".split("");
+const LABEL = 'ABCDEFGHIKLMNOPQRSTUVWXY'.split('');
 
-const labelAsl = document.querySelector("#label-asl");
-const labelHand = document.querySelector("#label-hand");
+const labelAsl = document.querySelector('#label-asl');
+const labelHand = document.querySelector('#label-hand');
 
-import DeviceDetector from "https://cdn.skypack.dev/device-detector-js@2.2.10";
+import DeviceDetector from 'https://cdn.skypack.dev/device-detector-js@2.2.10';
 
 const mpHands = window;
 const drawingUtils = window;
@@ -66,10 +66,10 @@ function testSupport(supportedDevices) {
 }
 
 // Our input frames will come from here.
-const videoElement = document.getElementsByClassName("input_video")[0];
-const canvasElement = document.getElementsByClassName("output_canvas")[0];
-const controlsElement = document.getElementsByClassName("control-panel")[0];
-const canvasCtx = canvasElement.getContext("2d");
+const videoElement = document.getElementsByClassName('input_video')[0];
+const canvasElement = document.getElementsByClassName('output_canvas')[0];
+const controlsElement = document.getElementsByClassName('control-panel')[0];
+const canvasCtx = canvasElement.getContext('2d');
 const config = {
   locateFile: (file) => {
     return `https://cdn.jsdelivr.net/npm/@mediapipe/hands@${mpHands.VERSION}/${file}`;
@@ -79,31 +79,31 @@ const config = {
 // call tick() each time the graph runs.
 const fpsControl = new controls.FPS();
 // Optimization: Turn off animated spinner after its hiding animation is done.
-const spinner = document.querySelector(".loading");
+const spinner = document.querySelector('.loading');
 spinner.ontransitionend = () => {
-  spinner.style.display = "none";
+  spinner.style.display = 'none';
 };
 const landmarkContainer = document.getElementsByClassName(
-  "landmark-grid-container"
+  'landmark-grid-container'
 )[0];
 const grid = new controls3d.LandmarkGrid(landmarkContainer, {
   connectionColor: 0xcccccc,
   definedColors: [
-    { name: "Left", value: 0xffa500 },
-    { name: "Right", value: 0x00ffff },
+    { name: 'Left', value: 0xffa500 },
+    { name: 'Right', value: 0x00ffff },
   ],
   range: 0.2,
   fitToGrid: false,
-  labelSuffix: "m",
+  labelSuffix: 'm',
   landmarkSize: 2,
   numCellsPerAxis: 4,
   showHidden: false,
   centered: false,
 });
 function onResults(results) {
-  console.log(results);
+  // console.log(results);
   // Hide the spinner.
-  document.body.classList.add("loaded");
+  document.body.classList.add('loaded');
   // Update the frame rate.
   fpsControl.tick();
   // Draw the overlays.
@@ -117,18 +117,29 @@ function onResults(results) {
     canvasElement.height
   );
   if (results.multiHandLandmarks.length === 0) {
-    labelAsl.innerHTML = "";
-    labelHand.innerHTML = "Nothing";
+    labelAsl.innerHTML = '';
+    labelHand.innerHTML = 'Nothing';
   } else {
     if (results.multiHandLandmarks && results.multiHandedness) {
       labelHand.innerHTML = results.multiHandedness[0].label;
 
       const vertices = results.multiHandLandmarks[0];
+
+      console.log(vertices);
       const vertices_xyz = [];
 
       if (vertices.length !== 0) {
         vertices.forEach((v) => {
-          vertices_xyz.push(v.x);
+          if (results.multiHandedness[0].label === 'Left') {
+            const X = vertices.map((v) => v.x);
+            const minX = Math.min(...X);
+            const maxX = Math.max(...X);
+            const midX = (minX + maxX) / 2;
+
+            vertices_xyz.push(midX - (v.x - midX));
+          } else {
+            vertices_xyz.push(v.x);
+          }
           vertices_xyz.push(v.y);
           vertices_xyz.push(v.z);
         });
@@ -144,17 +155,17 @@ function onResults(results) {
 
       for (let index = 0; index < results.multiHandLandmarks.length; index++) {
         const classification = results.multiHandedness[index];
-        const isRightHand = classification.label === "Right";
+        const isRightHand = classification.label === 'Right';
         const landmarks = results.multiHandLandmarks[index];
         drawingUtils.drawConnectors(
           canvasCtx,
           landmarks,
           mpHands.HAND_CONNECTIONS,
-          { color: isRightHand ? "#00FF00" : "#FF0000" }
+          { color: isRightHand ? '#00FF00' : '#FF0000' }
         );
         drawingUtils.drawLandmarks(canvasCtx, landmarks, {
-          color: isRightHand ? "#00FF00" : "#FF0000",
-          fillColor: isRightHand ? "#FF0000" : "#00FF00",
+          color: isRightHand ? '#00FF00' : '#FF0000',
+          fillColor: isRightHand ? '#FF0000' : '#00FF00',
           radius: (data) => {
             return drawingUtils.lerp(data.from.z, -0.15, 0.1, 10, 1);
           },
@@ -198,7 +209,7 @@ hands.onResults(onResults);
 // options.
 new controls.ControlPanel(controlsElement, {
   selfieMode: true,
-  maxNumHands: 1,
+  maxNumHands: 2,
   modelComplexity: 1,
   minDetectionConfidence: 0.5,
   minTrackingConfidence: 0.5,
@@ -249,6 +260,6 @@ new controls.ControlPanel(controlsElement, {
   ])
   .on((x) => {
     const options = x;
-    videoElement.classList.toggle("selfie", options.selfieMode);
+    videoElement.classList.toggle('selfie', options.selfieMode);
     hands.setOptions(options);
   });

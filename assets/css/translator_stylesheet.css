@@ -1,63 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap");
-
-body {
-  background-image: url("../img/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/*==================== NAVBAR ====================*/
-.header {
-  width: 100%;
-  position: fixed;
-}
-
-.nav {
-  max-width: auto;
-  margin: 0 80px;
-  height: 5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav__logo {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 45px;
-  align-items: center;
-  color: #ffa072;
-  text-decoration: none;
-}
-
-.nav__menu {
-  margin-left: auto;
-}
-
-.nav__list {
-  display: flex;
-  column-gap: 2rem;
-  list-style: none;
-}
-
-.nav__link {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 45px;
-  align-items: center;
-  color: #fff;
-  text-decoration: none;
-}
-
-.nav__link:hover {
-  color: #ffa072;
-}
-
 /*==================== ASL TRANSLATOR ====================*/
 .textToSign {
   display: flex;
@@ -84,7 +24,7 @@ body {
 }
 
 .section__title {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 60px;
@@ -94,7 +34,7 @@ body {
 }
 
 .section__subtitle {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
@@ -117,7 +57,7 @@ input {
   );
   border-radius: 50px;
   border: none;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
@@ -128,7 +68,7 @@ input {
 }
 
 ::placeholder {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
@@ -142,7 +82,7 @@ input {
 
 .btn__translate {
   margin-top: 20px;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 1000;
   font-size: 20px;

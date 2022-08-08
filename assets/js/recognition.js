@@ -153,24 +153,24 @@ function onResults(results) {
         labelAsl.innerHTML = LABEL[index];
       }
 
-      for (let index = 0; index < results.multiHandLandmarks.length; index++) {
-        const classification = results.multiHandedness[index];
-        const isRightHand = classification.label === 'Right';
-        const landmarks = results.multiHandLandmarks[index];
-        drawingUtils.drawConnectors(
-          canvasCtx,
-          landmarks,
-          mpHands.HAND_CONNECTIONS,
-          { color: isRightHand ? '#00FF00' : '#FF0000' }
-        );
-        drawingUtils.drawLandmarks(canvasCtx, landmarks, {
-          color: isRightHand ? '#00FF00' : '#FF0000',
-          fillColor: isRightHand ? '#FF0000' : '#00FF00',
-          radius: (data) => {
-            return drawingUtils.lerp(data.from.z, -0.15, 0.1, 10, 1);
-          },
-        });
-      }
+      // for (let index = 0; index < results.multiHandLandmarks.length; index++) {
+      //   const classification = results.multiHandedness[index];
+      //   const isRightHand = classification.label === 'Right';
+      //   const landmarks = results.multiHandLandmarks[index];
+      //   drawingUtils.drawConnectors(
+      //     canvasCtx,
+      //     landmarks,
+      //     mpHands.HAND_CONNECTIONS,
+      //     { color: isRightHand ? '#00FF00' : '#FF0000' }
+      //   );
+      //   drawingUtils.drawLandmarks(canvasCtx, landmarks, {
+      //     color: isRightHand ? '#00FF00' : '#FF0000',
+      //     fillColor: isRightHand ? '#FF0000' : '#00FF00',
+      //     radius: (data) => {
+      //       return drawingUtils.lerp(data.from.z, -0.15, 0.1, 10, 1);
+      //     },
+      //   });
+      // }
     }
   }
 

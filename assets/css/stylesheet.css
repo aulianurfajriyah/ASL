@@ -65,7 +65,7 @@ body {
   height: 356px;
   position: relative;
   margin: auto;
-  padding-top: 8%;
+  padding-top: 10%;
 }
 
 .section__header {
@@ -79,7 +79,7 @@ body {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 80px;
   line-height: 60px;
   color: #ffa072;
   margin: 0%;
@@ -97,7 +97,7 @@ body {
 }
 
 .content {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .btn {

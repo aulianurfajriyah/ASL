@@ -154,7 +154,7 @@ body {
 #label-asl-container {
   background-color: #062e4971;
   font-size: 80px;
-  z-index: 9999;
+  z-index: 99;
   height: 100px;
   width: 300px;
   display: flex;
@@ -179,4 +179,8 @@ body {
   /* height: 100%; */
   font-size: 0.2em;
   padding-right: 30px;
+}
+
+.dropdown-option {
+  z-index: 999;
 }

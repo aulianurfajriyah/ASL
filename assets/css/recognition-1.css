@@ -152,31 +152,26 @@ body {
 /* ================================ */
 
 #label-asl-container {
-  background-color: #062e4971;
+  background-color: #3498db;
   font-size: 80px;
   z-index: 9999;
   height: 100px;
-  width: 300px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-content: center;
   /* padding: 10px 20px; */
-  position: absolute;
-  top: 160px;
-  left: 20px;
-  border-radius: 15px;
-  border: 2px solid white;
-  box-shadow: 1px 1px 10px #000000a0;
+  outline: solid 1px black;
 }
 
 #label-asl {
   height: 100%;
-  padding-left: 30px;
+  padding: 0 20px;
 }
 
 #label-hand {
   /* height: 100%; */
   font-size: 0.2em;
-  padding-right: 30px;
+  padding: 10px;
 }

@@ -123,8 +123,8 @@ body {
   color: #2a1d4b;
 }
 
-@media screen and (max-width: 768px){
-  .body{
+@media screen and (max-width: 768px) {
+  .body {
     min-height: 100vh;
   }
   .section__title {
@@ -135,7 +135,7 @@ body {
     font-size: 20px;
   }
 
-  .home{
+  .home {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -150,7 +150,7 @@ body {
     left: 60px;
   }
 
-  .home__content{
+  .home__content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -160,7 +160,7 @@ body {
     height: 136px;
   }
 
-  .btn{
+  .btn {
     font-size: 15px;
   }
 }

@@ -160,9 +160,22 @@ input {
   list-style-type: none;
 }
 
-img {
+.letter {
   width: auto;
   height: 114px;
+}
+
+.letter-like {
+  height: 114px;
+  min-width: 114px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  font-family: 'Poppins';
+  font-weight: bold;
+  border: 1px dashed white;
 }
 
 /* ============= mic =========== */
@@ -222,10 +235,6 @@ img {
 }
 
 /* ====================== */
-
-.container {
-  outline: 1px solid white;
-}
 
 /* ============ Handphone =========== */
 @media screen and (max-width: 768px) {

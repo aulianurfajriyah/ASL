@@ -14,7 +14,7 @@
 }
 
 .nav__logo {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -35,7 +35,7 @@
 }
 
 .nav__link {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
@@ -77,7 +77,7 @@
 }
 
 .section__title {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 60px;
@@ -87,7 +87,7 @@
 }
 
 .section__subtitle {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
@@ -108,7 +108,7 @@ input {
   );
   border-radius: 50px;
   border: none;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -125,7 +125,7 @@ input {
 
 .btn__translate {
   margin-top: 20px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 1000;
   font-size: 20px;
@@ -173,7 +173,7 @@ input {
   text-align: center;
   font-size: 50px;
   color: white;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-weight: bold;
   border: 1px dashed white;
 }
@@ -215,7 +215,7 @@ input {
   color: white;
   /* padding: 15px; */
   width: max-content;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 13px;

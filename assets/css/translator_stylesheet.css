@@ -14,7 +14,7 @@
 }
 
 .nav__logo {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -35,7 +35,7 @@
 }
 
 .nav__link {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
@@ -98,8 +98,6 @@ input {
   box-sizing: border-box;
   width: 434px;
   height: 50px;
-  padding: 15px 0;
-  margin-top: 30px;
   background: linear-gradient(
     267.75deg,
     rgba(255, 255, 255, 0.14) 0.8%,
@@ -110,11 +108,12 @@ input {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 27px;
   align-items: center;
   text-align: center;
   color: #e8e5f0;
+  padding: 10px 30px;
 }
 
 ::placeholder {
@@ -174,24 +173,24 @@ img {
 
 /* ============ Handphone =========== */
 @media screen and (max-width: 768px) {
-  .body{
+  .body {
     min-width: 100vh;
     max-height: 828px;
   }
 
-  .textToSign{
+  .textToSign {
     padding-top: 40%;
   }
   .section__title {
     font-size: 60px;
     word-wrap: break-word;
   }
-  
+
   .section__subtitle {
     font-size: 20px;
   }
 
-  input{
+  input {
     width: 400px;
   }
 
@@ -201,13 +200,64 @@ img {
     left: 50px;
     right: 100px;
   }
-  
+
   .display__img li {
     list-style-type: none;
   }
-  
+
   img {
     width: auto;
     height: 98px;
   }
+}
+
+/* ============= mic =========== */
+
+.input-wrapper {
+  display: flex;
+  flex-direction: row;
+  /* outline: 1px solid white; */
+  align-items: center;
+  margin-top: 30px;
+}
+
+.mic {
+  box-sizing: border-box;
+  height: 50px;
+  width: 50px;
+  color: white;
+  margin-left: 10px;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: gray;
+}
+
+.mic-on {
+  background: red;
+}
+
+.lang-wrapper {
+  box-sizing: border-box;
+  margin-left: 10px;
+  color: white;
+  /* padding: 15px; */
+  width: max-content;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.lang-item {
+  padding: 0px 8px;
+  border-radius: 10000px;
+  background-color: none;
+  border: 2px solid #ffa072;
+  text-align: center;
+  cursor: pointer;
+}
+
+.lang-item-active {
+  background-color: #ffa072;
 }

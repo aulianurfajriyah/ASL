@@ -1,4 +1,54 @@
 /*==================== ASL TRANSLATOR ====================*/
+.header {
+  width: 100%;
+  position: fixed;
+}
+
+.nav {
+  max-width: auto;
+  margin: 0 80px;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 45px;
+  align-items: center;
+  color: #ffa072;
+  text-decoration: none;
+}
+
+.nav__menu {
+  margin-left: auto;
+}
+
+.nav__list {
+  display: flex;
+  column-gap: 2rem;
+  list-style: none;
+}
+
+.nav__link {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 45px;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  color: #ffa072;
+}
+
 .textToSign {
   display: flex;
   justify-content: center;
@@ -124,10 +174,40 @@ img {
 
 /* ============ Handphone =========== */
 @media screen and (max-width: 768px) {
-  .nav {
-    justify-content: center;
+  .body{
+    min-width: 100vh;
+    max-height: 828px;
   }
-  .textToSign {
-    padding-top: 5%;
+
+  .textToSign{
+    padding-top: 40%;
+  }
+  .section__title {
+    font-size: 60px;
+    word-wrap: break-word;
+  }
+  
+  .section__subtitle {
+    font-size: 20px;
+  }
+
+  input{
+    width: 400px;
+  }
+
+  .display__img {
+    margin: 10px;
+    width: 400px;
+    left: 50px;
+    right: 100px;
+  }
+  
+  .display__img li {
+    list-style-type: none;
+  }
+  
+  img {
+    width: auto;
+    height: 98px;
   }
 }

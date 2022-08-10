@@ -122,3 +122,45 @@ body {
   background-color: #b1a9cf;
   color: #2a1d4b;
 }
+
+@media screen and (max-width: 768px){
+  .body{
+    min-height: 100vh;
+  }
+  .section__title {
+    font-size: 60px;
+  }
+
+  .section__subtitle {
+    font-size: 20px;
+  }
+
+  .home{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    width: 317px;
+    height: 261px;
+    margin-top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    right: -60;
+    left: 60px;
+  }
+
+  .home__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 15px;
+    width: 263px;
+    height: 136px;
+  }
+
+  .btn{
+    font-size: 15px;
+  }
+}

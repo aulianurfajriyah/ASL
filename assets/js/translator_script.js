@@ -1,18 +1,20 @@
-let btnTranslate = document.getElementById("btn__translate");
-let output = document.getElementById("display__img");
+let btnTranslate = document.getElementById('btn__translate');
+let output = document.getElementById('display__img');
 
-const imgs = "ABCDEFGHIKJLMNOPQRSTUVWXYZ".split("");
-imgs.push("space");
+const imgs = 'ABCDEFGHIKJLMNOPQRSTUVWXYZ'.split('');
+imgs.push('space');
 console.log(imgs);
 
-btnTranslate.addEventListener("click", () => {
-  let text = document.getElementById("inputText").value;
-  const letters = text.toUpperCase().split("").map(replaceSpace);
-  console.log(letters);
-  let displayImage = "";
+btnTranslate.addEventListener('click', () => {
+  let text = document.getElementById('inputText').value;
+  const letters = text.toUpperCase().split('').map(replaceSpace);
+  console.log(lang);
+  let displayImage = '';
   letters.forEach((letter) => {
     if (imgs.includes(letter)) {
-      displayImage += `<img class="letter" src="assets/img/${letter}.png" title="${letter}"/>`;
+      displayImage += `<img class="letter" src="assets/img/${
+        lang || 'en-US'
+      }/${letter}.png" title="${letter}"/>`;
     } else {
       displayImage += `
         <div class="letter-like">${letter}</div>
@@ -24,8 +26,8 @@ btnTranslate.addEventListener("click", () => {
 });
 
 function replaceSpace(element) {
-  if (element === " ") {
-    return "space";
+  if (element === ' ') {
+    return 'space';
   } else {
     return element;
   }
